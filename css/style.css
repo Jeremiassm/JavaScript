@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Cheddar;
+    src: url('../fonts/Cheddar.ttf');
+    font-family: CaptureIt;
+    src: url('../fonts/Capture\ it.ttf');
+}
+
 body{
     background-color: black;
+    font-family: CaptureIt; 
+}
+
+.navbar-brand{
+    color: white;
 }

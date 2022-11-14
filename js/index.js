@@ -6,10 +6,10 @@ let saludoDespedida = ("gracias por su compra, te esperamos nuevamente!");
 
 //Definimos una función para que el usuario visualice el menú
 function menu(){
-    return prompt("Seleccione qué desea comprar: 1. Mostrar menú completo 2. Hamburguesas Bacanal 3. Hamburguesas Clásicas 4. Panchos 5. Papas fritas 6. No quiero comprar");
+    return prompt("Seleccione qué desea realizar: 1. Mostrar menú completo 2. Hamburguesas Bacanal 3. Sandwichs 4. Panchos  5. Papas fritas 6. Bebidas 7. No quiero comprar");
 }
 
-//Arrays con el menú completo
+//Arrays con los diferentes productos
 const hamburguesas = [
     {id:1, nombre:"Gringa criolla", precio: 1210, ingredientes: "Doble cheddar, lechuga repollada, tomate rodajas de pepinillos agridulce, mayones de morrones y cebolla a la plancha"},
     {id:2, nombre:"Smoker", precio: 1290, ingredientes: "Lechuga escarola, queso ahumado, sweetchili con vinagre, chorizo colorado y morrón rojo sudado en sus propios jugos."},
@@ -22,13 +22,10 @@ const hamburguesas = [
     {id:9, nombre:"Menú kids", precio: 970, ingredientes: "Burger simple con queso, chicken tenders y papas."},
     {id:10, nombre:"California Cheese", precio: 1210, ingredientes: "Cheddar, lechuga repollada, tomate, aros de cebolla morada, salsa stacker, pan con escamas de parmesano."},
     {id:11, nombre:"California Bacon", precio: 1210, ingredientes: "Cheddar, lechuga repollada, tomate, aros de cebolla morada, salsa stacker, panceta."},
-]
-const hambuersasClasicas = [
     {id:12, nombre:"Cheese", precio: 1080, ingredientes: "Pan, carne, queso y dressing secreto"},
     {id:13, nombre:"Cheese baco", precio: 1180, ingredientes: "Pepino, cebolla moradaen brunoise, cheddar, panceta y dressing secreto."},
     {id:14, nombre:"Cheddalier", precio: 1210, ingredientes: "Cheddar, panceta, cebolla crispy y dressing secreto."},
-]
-
+] 
 const sandwichs = [
     {id:15, nombre:"8-bit", precio: 1270, ingredientes: "Cebolla, manteca, queso, cheddar y dressing secreto"},
     {id:16, nombre:"Filoso phil", precio: 1520, ingredientes: "Carne cortada a cuchillo, cebolla caramelizada, mermelada de panceta, cheddar, y 1 dressing a elección de lactonesa de chili o ácide de alcaparras"},
@@ -52,86 +49,107 @@ const bebidas = [
     {id:29, nombre:"Agua", precio: 360},
 ]
 
+//Concatenamos todos los arrays para mostrar el menu completo
+const menuCompleto = hamburguesas.concat(sandwichs, panchos, papas, bebidas)
+
 
 //Mientras que la opción seleccionada no sea 6, se va a seguir ejecutando
 let opcion = menu();
-while(opcion != "6") {
+while(opcion != "7") {
 
     //switch para dividir por numeros las secciones de compra
     switch (opcion) {
         case "1":
-            hamburguesas.forEach((hamburguesas) => {
-                alert(hamburguesas.nombre)            
-            });
-            
+                alert("Mirá nuestro menú para pedir lo que quieras:");
+                
+                menuCompleto.forEach(producto => {
+                    alert(producto.id + " " + producto.nombre);
+                    1});
+                
+                let eleccion1 = (Number(prompt("Indicanos, con en número de referencia, qué querés pedir")));
+                
+                const pedido = menuCompleto.find(producto =>{
+                    return producto.id === eleccion1;
+                })
+
+                alert("Usted pidió " + pedido.nombre + " tendrá que abonar el total de $" + pedido.precio);
 
             break;
         case "2":
-            let hamburguesa = (prompt("Tenemos las siguientes hamburguesas para ofrecerte:"));
-                switch (hamburguesa){
-                    case "1":
-                        alert("El valor que debe abonar es de $1200, " + saludoDespedida);
-                        break;
-                    case "2":
-                        alert("El valor que debe abonar es de $1350, " + saludoDespedida);
-                        break;
-                    case "3":
-                        alert("El valor que debe abonar es de $1400, " + saludoDespedida);
-                        break;
-                    case "4":
-                        alert("El valor que debe abonar es de $1100, " + saludoDespedida);
-                            break;
-                    }
+            alert("Tenemos las mejores hamburguesas para ofrecerte:");
+                
+                hamburguesas.forEach(hamburguesa => {
+                    alert(hamburguesa.id + " " + hamburguesa.nombre);
+                    1});
+                
+                let eleccion2 = (Number(prompt("Indicanos, con en número de referencia, cuál queres pedir")));
+                
+                const pedido2 = hamburguesas.find(hamburguesa =>{
+                    return hamburguesa.id === eleccion2;
+                })
+
+                alert("Usted pidió " + pedido2.nombre + " tendrá que abonar el total de $" + pedido2.precio);
         break;
         case "3":
-            let panchos2 = (prompt("Tenemos los siguientes panchos para ofrecerte: 1. El chingon 2. Tio Sam 3. Panchido"));
-            switch (panchos2){
-                case "1":
-                    alert("El valor que debe abonar es de $800, " + saludoDespedida);
-                    break;
+            alert("Estos sandwichs son  los mejores de la ciudad:");
                 
-                case "2":
-                    alert("El valor que debe abonar es de $500, " + saludoDespedida);
-                    break;
-                case "3":
-                    alert("El valor que debe abonar es de $700, " + saludoDespedida);
-                    break;
-            }
+                sandwichs.forEach(sandwich => {
+                    alert(sandwich.id + " " + sandwich.nombre);
+                    1});
+                
+                let eleccion3 = (Number(prompt("Indicanos, con en número de referencia, cuál queres pedir")));
+                
+                const pedido3 = sandwichs.find(sandwich =>{
+                    return sandwich.id === eleccion3;
+                })
+
+                alert("Usted pidió " + pedido3.nombre + " tendrá que abonar el total de $" + pedido3.precio);
             break;
-        case "4":
-            let papasFritas2 = (prompt("Tenemos las siguientes papas para ofrecerte: 1. Comunes 2. Cheddar 3. Cheddar y bacon 4. Bacon"));
-                switch (papasFritas2){
-                    case "1":
-                        alert("El valor que debe abonar es de $600, " + saludoDespedida);
-                        break;
-                    case "2":
-                        alert("El valor que debe abonar es de $700, " + saludoDespedida);
-                        break;
-                    case "3":
-                        alert("El valor que debe abonar es de $750, " + saludoDespedida);
-                        break;
-                    case "4":
-                        alert("El valor que debe abonar es de $700, " + saludoDespedida);
-                        break;
-                    }
+        case "4":                
+            alert("Los mejores panchos, en Bacanal:");
+                
+                panchos.forEach(pancho => {
+                    alert(pancho.id + " " + pancho.nombre);
+                    1});
+                
+                let eleccion4 = (Number(prompt("Indicanos, con en número de referencia, cuál queres pedir")));
+                
+                const pedido4 = panchos.find(pancho =>{
+                    return pancho.id === eleccion4;
+                })
+
+                alert("Usted pidió " + pedido4.nombre + " tendrá que abonar el total de $" + pedido4.precio);
             break;
-        case "5":
-            let bebidas = (prompt("Tenemos las siguientes papas para ofrecerte: 1. Comunes 2. Cheddar 3. Cheddar y bacon 4. Bacon"));
-                switch (bebidas){
-                    case "1":
-                        alert("El valor que debe abonar es de $600, " + saludoDespedida);
-                        break;
-                    case "2":
-                        alert("El valor que debe abonar es de $700, " + saludoDespedida);
-                        break;
-                    case "3":
-                        alert("El valor que debe abonar es de $750, " + saludoDespedida);
-                        break;
-                    case "4":
-                        alert("El valor que debe abonar es de $700, " + saludoDespedida);
-                        break;
-                    }
-            break;                                       
+        case "5":                
+            alert("Date un lujo con estas papas");
+                
+                papas.forEach(papa => {
+                    alert(papa.id + " " + papa.nombre);
+                    1});
+                
+                let eleccion5 = (Number(prompt("Indicanos, con en número de referencia, cuál queres pedir")));
+                
+                const pedido5 = papas.find(papa =>{
+                    return papa.id === eleccion5;
+                })
+
+                alert("Usted pidió unas " + pedido5.nombre + " tendrá que abonar el total de $" + pedido5.precio);
+        break
+        case "6":                
+            alert("Las bebibas más frecas, acá:");
+                
+                bebidas.forEach(bebida => {
+                    alert(bebida.id + " " + bebida.nombre);
+                    1});
+                
+                let eleccion6 = (Number(prompt("Indicanos, con en número de referencia, cuál queres pedir")));
+                
+                const pedido6 = bebidas.find(bebida =>{
+                    return bebida.id === eleccion6;
+                })
+
+                alert("Usted pidió una refrescante" + pedido6.nombre + " tendrá que abonar el total de $" + pedido6.precio);
+        break;                                    
         default:
             alert("Seleccione una opción válida");
             break;
