@@ -1,76 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bacanal</title>
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <nav class="navbar bg-black">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">Bacanal</a>
-      </div>
-    </nav>
+
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">Bacanal street food
+                </h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id= "menu" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i>Menú completo</button>
+                    </li>
+                    <li>
+                        <button id="hamburguesas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Hamburguesas</button>
+                    </li>
+                    <li>
+                        <button id="sandwichs" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Sandwichs</button>
+                    </li>
+                    <li>
+                        <button id="panchos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Panchos</button>
+                    </li>
+                    <li>
+                        <button id="bebidas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Bebidas</button>
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">Bacanal street food ©</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Menú completo</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </main>
+    </div>
     
-    <main>
-      <h2 class="titulo-principal">Menú Completo</h2>
-      <div class="contenedor-menu">
-          <div class="producto">
-            <img class="producto-imagen" src="./img/CaliforniaBacon.jpg" alt="CaliforniaBacon" height="360px">
-            <div class="producto-detalles">
-              <h3 class= "producto-titulo">California Bacon</h3>
-              <p class= "producto-precio">$1290</p>
-              <button class="producto-agregar">Agregar al carrito</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="./img/ChillQueen.jpg" alt="CaliforniaBacon" height="360px">
-            <div class="producto-detalles">
-              <h3 class= "producto-titulo">California Bacon</h3>
-              <p class= "producto-precio">$1290</p>
-              <button class="producto-agregar">Agregar al carrito</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="./img/Rickyfort.jpg" alt="CaliforniaBacon" height="360px">
-            <div class="producto-detalles">
-              <h3 class= "producto-titulo">California Bacon</h3>
-              <p class= "producto-precio">$1290</p>
-              <button class="producto-agregar">Agregar al carrito</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="./img/CaliforniaBacon.jpg" alt="CaliforniaBacon" height="500px">
-            <div class="producto-detalles">
-              <h3 class= "producto-titulo">California Bacon</h3>
-              <p class= "producto-precio">$1290</p>
-              <button class="producto-agregar">Agregar al carrito</button>
-            </div>
-          </div>
-      </div>
-
-
-      <img src="./img/CaliforniaBacon.jpg" width="500" height="400" class="img-fluid" alt="...">
-
-
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="./js/index.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

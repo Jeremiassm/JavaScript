@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 @font-face {
@@ -18,4 +19,7 @@ body{
 
 .navbar-brand{
     color: white;
+}
+button{
+    color: black;
 }
