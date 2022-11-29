@@ -48,7 +48,7 @@ const productos = [
     {
         id: "5",
         titulo: "Monster",
-        imagen: "./img/hamburguesas/monster.jpg",
+        imagen: "./img/hamburguesas/monster1.jpg",
         ingredientes: "3 discos de care, 3 fetas de cheddar, 2 festas de atuel, aderezo staker",
         categoria: {
             nombre: "Hamburguesas",
