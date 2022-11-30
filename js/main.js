@@ -48,7 +48,7 @@ const productos = [
     {
         id: "5",
         titulo: "Monster",
-        imagen: "./img/hamburguesas/monster.jpg",
+        imagen: "./img/hamburguesas/Monster.jpg",
         ingredientes: "3 discos de care, 3 fetas de cheddar, 2 festas de atuel, aderezo staker",
         categoria: {
             nombre: "Hamburguesas",
@@ -196,7 +196,7 @@ const productos = [
     {
         id: "19",
         titulo: "Cheddar",
-        imagen: "./img/papas/cheddar.jpg",
+        imagen: "./img/papas/Cheddar.jpg",
         ingredientes: "Papas bañadas con cheddar",
         categoria: {
             nombre: "papas",
@@ -274,7 +274,7 @@ const productos = [
     {
         id: "26",
         titulo: "Agua",
-        imagen: "./img/bebidas/agua.jpg",
+        imagen: "./img/bebidas/Agua.jpg",
         ingredientes: "Agua de 500ml",
         categoria: {
             nombre: "Bebidas",
