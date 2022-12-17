@@ -78,7 +78,12 @@ function eliminarDelCarrito(e) {
     cargarProductosCarrito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
+    
+    Swal.fire(
+        'Listo',
+        'Se borró el producto del carrito',
+        'success'
+      )
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
@@ -105,4 +110,9 @@ function comprarCarrito() {
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
 
+    Swal.fire(
+        'Muchas gracias',
+        'Se cargó correctamente el pedido',
+        'success'
+     )
 }
