@@ -41,7 +41,7 @@ function mostrarProductos(productos){
     
 }
 
-//Usamos la funcion cargarproductos, cuando devuelve un valor se le asigna productos
+//Usamos la funcion cargarproductos, cuando devuelve un valor se le asigna "productos"
 productos = [];
 cargarProductos().then(data => {
     productos = data
@@ -49,7 +49,7 @@ cargarProductos().then(data => {
 })
 mostrarProductos(productos);
 
-
+//Mostramos las categorias
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
 
@@ -69,6 +69,7 @@ botonesCategorias.forEach(boton => {
     })
 });
 
+//actualizamos el boton para agregar al carrito
 function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
@@ -77,6 +78,7 @@ function actualizarBotonesAgregar() {
     });
 }
 
+//Local storage
 let productosEnCarrito;
 
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
@@ -87,7 +89,7 @@ if (productosEnCarritoLS) {
 } else {
     productosEnCarrito = [];
 }
-
+//Agregamos al carrito
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
@@ -105,6 +107,7 @@ function agregarAlCarrito(e) {
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
+//actualizamos los numeros del carrito
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
